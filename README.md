@@ -21,7 +21,7 @@ Todo esto se presenta mediante un **avatar 2D interactivo** que responde por voz
   - `LangChain`
   - `pdfplumber` para extracción de texto y tablas
   - `Chroma` como vector store
-  - `elevenlabs` para síntesis de voz
+  - `speech_recognition` para síntesis de voz
 - 🌐 **HTML, CSS y JavaScript** (frontend)
   - Integración de avatar 2D animado en navegador
   - Reproducción de audio con `SpeechSynthesis`
