@@ -32,11 +32,6 @@ Todo esto se presenta mediante un **avatar 2D interactivo** que responde por voz
   - `RAGAS` (faithfulness, context precision, answer correctness)
   - `DeepEval`
 
-## 📁 Estructura del Proyecto
-
-
-
-
 ## 📊 Resultados Obtenidos
 
 Se evaluaron **6 combinaciones** de embeddings y modelos de lenguaje en tareas de recuperación y generación. Algunos resultados destacados:
