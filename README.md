@@ -48,6 +48,6 @@ Se evaluaron **6 combinaciones** de embeddings y modelos de lenguaje en tareas d
 git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
 cd tu_carpeta
 pip install -r requirements.txt
-python server.py
+python app.py
 
 
