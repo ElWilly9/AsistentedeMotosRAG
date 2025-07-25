@@ -1,0 +1,413 @@
+question,faithfulness_score,faithfulness_reason,answer_relevancy_score,answer_relevancy_reason,contextual_recall_score,contextual_recall_reason,contextual_precision_score,contextual_precision_reason,answer,ground_truth,contexts
+cual es el torque y potencia maxima que tiene la moto,1.0,"The faithfulness score of 1.00 indicates that the actual output perfectly aligns with the retrieval context, as there are no contradictions present.",0.5,"The score is 0.50 because it does not provide specific values for power and torque of the moto, which was the original input.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.5833333333333333,"The contextual precision score is 0.58 because even though relevant nodes (rank 2 and 3) are present, they do not provide the specific details about the torque and maximum power of the motor as requested, while the irrelevant node (rank 1) discusses safe driving practices which may not be directly related to the motor's performance.","¡Hola!  
+
+De acuerdo a la información que tengo sobre la Bajaj Boxer CT100 KS,  el documento que proporcionaste no menciona los valores exactos de potencia y torque. 
+
+¿Te gustaría que buscara esa información en otras fuentes? 
+
+",Potencia: 7.59 HP a 7.500 RPM. Torque: 8.24 Nm a 5.500 RPM.,"de manera segura. • Revise la tensión de la cadena de 20 a 30 mm y
+• Lleve siempre los documentos de la motocicleta que esté bien lubricada.
+vigentes y una licencia válida de conducción. • Funcionamiento de todas las luces y bocina.
+• Evite manejar sobre arena suelta o piedras, • Movimiento suave de la dirección sin restricciones.
+donde el vehículo podría patinar. • Juego libre en la palanca de embrague de 2 a 3 mm.
+• Sujete adecuadamente la ropa suelta mientras • Regreso del estante central y l..."
+cada cuanto es recomendable cambiarle el aceite a la moto y cuanto debo echarle,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it accurately answers the question 'cada cuanto es recomendable cambiarle el aceite a la moto y cuanto debo echarle'.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,"The contextual precision score is 1.00 because all relevant nodes (node 1) are ranked at the top, and irrelevant nodes (nodes 2-4) are correctly ranked lower.","¡Hola! 
+
+Para saber con exactitud cada cuánto cambiar el aceite y la cantidad a echar, te recomiendo consultar la tabla de mantenimiento periódico que viene con tu moto.  
+
+En esa tabla encontrarás los intervalos de cambio de aceite específicos para la Bajaj Boxer CT100 KS, así como la cantidad recomendada. 
+
+","Cada 5.000 a 5.500 km o cada 3 meses. Cantidad: 1.000 cc (cambio normal), 1.100 cc (con desensamble).","un desgaste acelerado del kit de arrastre. de cambio de aceite para dar una larga vida a los componentes del motor.
+Lubrique la cadena por lo menos cada 500 km si usa Para más detalles consulte cuadro de mantenimiento periódico.
+la motocicleta en zonas muy húmedas o polvorientas.
+. 22 .
+
+Cadena - Aceite de Motor
+IMPORTANTE
+Antes de encender el moto
+aceite 4T es el adecuado. Ver sección: ACEITE MOTOR
+ACEITE DEL MOTOR: Revisar cada semana
+• Mantenga el nivel de aceite entre
+la marca superior y la ..."
+cual es la elongadura recomendada de la cadena y cada cuanto debo cambiar el kit de arrastre,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,0.5,The score is 0.50 because it does not provide the recommended chain elongation and change frequency for a specific motorcycle model (Bajaj Boxer CT100 KS) as per the input.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"¡Hola! 
+
+La información sobre la elongación recomendada de la cadena y la frecuencia de cambio del kit de arrastre para la Bajaj Boxer CT100 KS no está disponible en el documento que me has proporcionado. 
+
+Te recomiendo consultar el manual de usuario de tu moto o buscar esa información en el sitio web oficial de Bajaj. 
+
+",Holgura recomendada entre 20 y 30 mm. Lubricar cada 500 km. Cambiar el kit cuando haya desgaste visible.,"la marca superior (C) y la marca inferior (D).
+NOTA: El no realizar este proceso o mantener la
+holgura de la cadena fuera de estos límites generará Es muy importante seguir la frecuencia recomendada
+un desgaste acelerado del kit de arrastre. de cambio de aceite para dar una larga vida a los componentes del motor.
+Lubrique la cadena por lo menos cada 500 km si usa Para más detalles consulte cuadro de mantenimiento periódico.
+la motocicleta en zonas muy húmedas o polvorientas.
+. 22 .
+
+banda elásti..."
+en que parte puedo encontrar la bateria de la moto,1.0,"The faithfulness score of 1.00 indicates that the actual output perfectly aligns with the retrieval context, demonstrating complete accuracy and adherence to the provided information.",1.0,The score is 1.00 because the provided answer directly addresses the question about finding the battery of a motorbike.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.8333333333333333,"The contextual precision score of 0.83 indicates that 83% of the top-ranked responses are relevant to the input 'en que parte puedo encontrar la bateria de la moto'. The first response directly answers the question, however, the second and third responses are irrelevant nodes. The second response mentions a battery but not the one for the motorbike, while the third response discusses a tool kit located near the battery, but does not explicitly state where the battery is found.","¡Hola! 
+
+La batería de la Bajaj Boxer CT100 KS se encuentra ubicada en el interior de la cubierta izquierda.  
+",Está ubicada en el interior de la cubierta lateral izquierda.,"veces para cubrir la pared del cilindro con el
+aceite e instalar de nuevo la bujía. A. Retire la batería y colóquela
+5. Coloque la motocicleta en una plataforma en una zona bien ventilada.
+de modo que las ruedas no toquen el suelo. B. Antes de volver a usar la moto:
+no pintadas para prevenir la oxidación. • Lleve la batería a recargar .
+7. Lubrique los cables de control. • Aplique vaselina en los terminales de la batería
+8. Cubra la moto perfectamente. (aplica solo a determinados modelos).
+9. As..."
+en que parte puedo encontrar el serial del chasis y el del motor de la moto,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,1.0,The score is 1.00 because it directly answers the question about finding the chassis and engine serial numbers for a motorcycle.,1.0,The score is 1.00 because all the sentences in the expected output can be attributed to the first node in the retrieval context.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"¡Hola! 
+
+De acuerdo con la información que tengo, el número de VIN (chasis) se encuentra en la parte frontal derecha del chasis, justo en frente del tanque de combustible. El número de motor se ubica en la parte inferior del motor, del lado izquierdo, justo debajo de la palanca de cambios. 
+
+
+
+","VIN: parte frontal derecha del chasis. Motor: parte inferior izquierda, debajo de la palanca de cambios.","Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Identificación de Los números de Motor y de VIN (Chasis) se utilizan para registrar e identificar la motocicleta
+la Motocicleta su motocicleta BA..."
+cuanta gasolina le cabe a la moto,0.0,"Error: 1 validation error for FaithfulnessVerdict
+verdict
+  Field required [type=missing, input_value={'verdit': 'yes'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing",1.0,"The score is 1.00 as the response directly addresses the question about how much gasoline a motorcycle can hold, without any irrelevant statements.",1.0,The score is 1.00 because all sentences in the expected output ('Capacidad total: 10.5 litros.' and 'Reserva: 2.3 litros.') are directly supported by corresponding information found in the retrieval context.,1.0,"The contextual precision score is 1.00 because the relevant node (rank 1) providing the correct answer to the question 'cuanta gasolina le cabe a la moto' is ranked first, while the irrelevant nodes (rank 2 and beyond) are not present in the provided retrieval contexts.","¡Hola! 
+
+De acuerdo a la información que tengo, el tanque de combustible de la Bajaj Boxer CT100 KS tiene capacidad para más de 1.2 litros de gasolina. 
+
+
+
+",Capacidad total: 10.5 litros. Reserva: 2.3 litros.,"Grifo de combustible
+desde el tanque hasta el carburador, este tiene 3 posiciones.
+ON:
+cantidad sea mayor a 1,2 litros, cuando la cantidad sea
+menor a la mencionada la motocicleta se apagará.
+Tapa del tanque de combustible
+Para abrir la tapa del depósito de combustible, inserte
+RES:
+la llave en la cerradura y gírela hacia la derecha y
+es menor a 1,2 litros, debe abastecer combustible lo
+levante la tapa del tanque de combustible.
+antes posible.
+La tapa se cierra empujándola hacia abajo.
+OFF:
+. 17..."
+en donde se encuentra la llave de gasolina de la moto,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it correctly answers the question about the location of a motorcycle's gas key.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"¡Hola! 
+
+La llave de gasolina de la Bajaj Boxer CT100 KS se utiliza para controlar el flujo de combustible desde el tanque hasta el carburador.  
+","Está en el lateral del motor. Posiciones: ON, RES y OFF.","Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Grifo de combustible
+desde el tanque hasta el carburador, este tiene 3 posiciones.
+ON:
+cantidad sea mayor a 1,2 litros, cuando la cantidad sea
+me..."
+cuales son las especificaciones de la bateria,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.3333333333333333,The score is 0.33 because it discusses the warranty of the battery instead of its specifications as asked by the input.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0,"The contextual precision score is 0.00 because the first node (rank 1) does not provide relevant battery specifications, the second node (rank 2) lacks explicit information about the voltage, ampere hours (Ah), or type (MF) of the battery, and the third node (rank 3) only discusses warranty duration without providing battery specifications.","¡Hola! 
+
+De acuerdo con la información que tengo, la batería de la Bajaj Boxer CT100 KS tiene una garantía de 6 meses o 6.000 km, lo primero que ocurra a partir de la fecha de entrega de la moto. 
+
+Para conocer especificaciones como el tipo de batería, voltaje y referencia, te recomiendo revisar la ""INFORMACIÓN DE GARANTÍA DE LA BATERÍA"" que viene con tu moto. 
+
+
+
+","12V, 3Ah, tipo MF (libre de mantenimiento).","Batería Bujía
+La batería se encuentra ubicada en • Quite la bujía usando la
+el interior de la cubierta izquierda. herramienta adecuada.
+Cuide del Medio Ambiente entregando • Limpie la bujía.
+la batería utilizada al centro de • Ajuste la calibración doblando
+servicio UMA para su correcta el electrodo lateral con cuidado.
+REFERENCIA
+Calibración: 0,6 - 0,7 mm
+• Cuando la batería está Bujías : Mico UR 3 AC o
+descargada, llévela a recargar. Champion PRZ 9 HC
+LLANTAS
+PRECAUCIÓN:
+Mantenga la presión ad..."
+cuantas marchas tiene la moto,1.0,The faithfulness score is 1.00 because there are no identified contradictions between the actual output and the retrieval context.,0.0,"The score is 0.00 because it does not provide information about the number of gears on the motorcycle, which was the question asked.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0,"The contextual precision score is 0.00 because the first and second retrieval nodes, ranked 1 and 2 respectively, are irrelevant to the input 'cuantas marchas tiene la moto'. The first node discusses motorcycle identification and registration while the second node does not provide information about the number of gears on the motorcycle.","¡Hola! 
+
+La información sobre el número de marchas de la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+
+
+
+",Tiene 4 velocidades.,"Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Identificación de Los números de Motor y de VIN (Chasis) se utilizan para registrar e identificar la motocicleta
+la Motocicleta su motocicleta BA..."
+cada cuanto debo realizarle un mantenimiento preventivo o uno correctivo,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,"The score is 1.00 because the response directly addresses the question about maintenance (preventive or corrective) for a car, making it highly relevant.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.8055555555555555,"The contextual precision score of 0.81 indicates that relevant nodes (nodes with verdict 'yes') are ranked higher than irrelevant nodes (nodes with verdict 'no'). However, the score could be higher because the second node, which is an irrelevant node, appears in the second position, slightly affecting the precision. Despite this, the ranking of relevant nodes is generally accurate and well-ordered.","¡Hola! 
+
+De acuerdo con la tabla de mantenimiento que te proporcioné, la frecuencia recomendada para un mantenimiento preventivo en la Bajaj Boxer CT100 KS es cada 5.000 km. 
+
+
+
+",Preventivo cada 5.000 km. Correctivo depende del desgaste. Es recomendable hacerlo en centros UMA.,"PREGUNTAS FRECUENTES
+¿Porqué son importantes • Son los que garantizan la calidad, seguridad e idoneidad de la motocicleta. En esos
+las revisiones de mantenimientos realizamos ajustes a diferentes sistemas de la motocicleta y además
+mantenimiento preventivo? recomendamos el cambio de algunas partes debido al desgaste normal por el uso
+frecuente, el cambio de estas no corresponden a fallas en la motocicleta, por el
+Para resumir son dos los factores que
+hacen que los mantenimiento preventivos
+sean ..."
+que tan alta es la moto,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,0.0,"The score is 0.00 because it does not provide information about the height of the motorcycle, as requested in the input 'que tan alta es la moto' (how tall is the motorcycle).",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"¡Hola! 
+
+Desafortunadamente, la altura de la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+
+",Altura total: 1.072 mm.,"Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Identificación de Los números de Motor y de VIN (Chasis) se utilizan para registrar e identificar la motocicleta
+la Motocicleta su motocicleta BA..."
+cual es la altura del asiento con respecto al piso,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it correctly answered the question about the seat height with respect to the floor.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"¡Hola!  
+
+La altura del asiento de la Bajaj Boxer CT100 KS es de 784 mm. 
+",Altura del asiento: 784 mm.,"banda elástica para evitar que se caiga. Trasera Sólo 28 psi
+• Puede ser utilizado para guardar un Trasera con Pasajero 32 psi
+kit de primeros auxilios.
+Recuerde verificar el indicador de desgaste
+de las llantas, este le informa si la llanta es
+apta o no para la conducción.
+. 21 .
+
+banda elástica para evitar que se caiga. Trasera Sólo 28 psi
+• Puede ser utilizado para guardar un Trasera con Pasajero 32 psi
+kit de primeros auxilios.
+de las llantas, este le informa si la llanta es
+apta o no para l..."
+cual es la presión de las llantas,0.6666666666666666,"The faithfulness score is 0.67 because the actual output provides tire pressure details for the rear wheel of Bajaj Boxer CT100 KS when it's alone, whereas the retrieval context does not specify such information in this scenario.",1.0,"The score is 1.00 as the response provided directly answers the question about tire pressure, with no irrelevant statements present.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Para la Bajaj Boxer CT100 KS, la presión recomendada para las llantas es de 28 psi para la trasera cuando va solo. Si vas con pasajero, la presión debe ser de 32 psi. 
+
+
+
+",Delantera: 25 PSI. Trasera sin pasajero: 28 PSI. Trasera con pasajero: 32 PSI.,"banda elástica para evitar que se caiga. Trasera Sólo 28 psi
+• Puede ser utilizado para guardar un Trasera con Pasajero 32 psi
+kit de primeros auxilios.
+Recuerde verificar el indicador de desgaste
+de las llantas, este le informa si la llanta es
+apta o no para la conducción.
+. 21 .
+
+banda elástica para evitar que se caiga. Trasera Sólo 28 psi
+• Puede ser utilizado para guardar un Trasera con Pasajero 32 psi
+kit de primeros auxilios.
+de las llantas, este le informa si la llanta es
+apta o no para l..."
+que tipos de frenos tiene la moto,0.5,"The score is 0.50 because the actual output includes specific details about the brakes of the La Bajaj Boxer CT100 KS, which are not mentioned in the retrieval context.",1.0,"The score is 1.00 because it correctly answered the question about types of brakes for a motorcycle, however, it could provide additional information or context to make the response more engaging and informative.",1.0,"The score is 1.00 because all the information in the expected output, specifically 'Frenos de tambor adelante y atrás, ambos de 110 mm.', can be found in the retrieval context.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"La Bajaj Boxer CT100 KS tiene frenos de tambor tanto en la rueda delantera como en la trasera. 
+","Frenos de tambor adelante y atrás, ambos de 110 mm.","• Salga temprano para llegar a su destino pastillas de freno.
+de manera segura. • Revise la tensión de la cadena de 20 a 30 mm y
+• Lleve siempre los documentos de la motocicleta que esté bien lubricada.
+vigentes y una licencia válida de conducción. • Funcionamiento de todas las luces y bocina.
+• Evite manejar sobre arena suelta o piedras, • Movimiento suave de la dirección sin restricciones.
+donde el vehículo podría patinar. • Juego libre en la palanca de embrague de 2 a 3 mm.
+• Sujete adecuadam..."
+como hago el despegue o asentamiento del motor,0.0,"Error: 1 validation error for FaithfulnessVerdict
+verdict
+  Field required [type=missing, input_value={'verditc': 'idk'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing",1.0,The score is 1.00 because it accurately addresses and answers the user's question about 'how to make the takeoff or settling of the engine.',1.0,The score is 1.00 as both sentences in the Expected Output align well with the information provided in the Retrieval Context.,0,"The contextual precision score is 0.00 because all nodes in the retrieval contexts, starting from rank 1 to 6, do not provide information directly related to 'como hago el despegue o asentamiento del motor' (how to take off or settle the engine), hence they are ranked lower than relevant nodes.","Para el despegue o asentamiento del motor de la Bajaj Boxer CT100 KS,  te recomiendo dejar el motor en ralentí por 1 minuto inmediatamente después de encenderlo. Esto permitirá que el motor se lubrique internamente y se estabilice. 
+
+
+
+",Evitar acelerones y frenadas bruscas durante los primeros 2.000 km. Seguir los límites de velocidad por marcha.,"FILTRO DE ACEITE (PAPEL):
+inmediatamente después de haber encendido el
+motor. Deje el motor en ralentí por 1 minuto para
+• Se localiza en la cubierta del embrague. permitir que el motor se lubrique internamente.
+• Se debe reemplazar periódicamente acudiendo
+a un centro de servicio autorizado según el
+cuadro de mantenimiento.
+. 23 .
+
+Tanque de Combustible
+Grifo de combustible
+El grifo de combustible se encarga de controlar el flujo de combustible
+desde el tanque hasta el carburador, este tiene 3 ..."
+cuanto tiempo dura la garantía de la moto,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it correctly answered the question 'How long is the warranty for a motorcycle?'.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,"The contextual precision score is 1.00 because all 'yes' verdicts are ranked first, before any 'no' verdicts in the retrieval contexts. The relevant node (rank 1) directly answers the question about the duration of the warranty for the motorcycle.","La garantía de la Bajaj Boxer CT100 KS es de 20.000 kilómetros o 12 meses, lo primero que ocurra.  
+","12 meses o 20.000 kilómetros, lo que ocurra primero.","servicio y derechos relacionados con la garantía.
+Además los Centros de Servicio UMA le garantizan calidad en
+Recordamos que el período de la garantía original de la el servicio, historial de su motocicleta consolidado, técnicos
+motocicleta es de 20.000 Km o 12 meses, lo primero que ocurra; entrenados en las tecnologías BAJAJ, respaldo de
+además se aclara que la garantía es el derecho que tiene ante BAJAJ en todo momento.
+cualquier defecto de manufactura o ensamble de su producto.
+.. 4411 ..
+
+Al..."
+cuanto es la emisión de gases de la moto,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it directly addresses the question 'cuanto es la emisión de gases de la moto' by providing an answer to the amount of emissions produced by a motorcycle.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"La Bajaj Boxer CT100 KS cumple con la Ley 1972 de 2019 sobre emisiones de gases contaminantes.  
+
+Los niveles máximos permitidos para el monóxido de carbono (CO) son del 4.5%. 
+","la moto cumple con la Ley 1972 de Julio de 2019, que regula los niveles de emisión de gases contaminantes en Colombia. Los niveles máximos permitidos para gases contaminantes en Colombia son: Monóxido de Carbono (CO): máximo 4.5%. Hidrocarburos (HC): máximo 2000 ppm.","EMISIÓN DE GASES:
+Ley 1972 de Julio de 2019 expedida Todas las motocicleta BAJAJ cuentan con Los CDA o Centros de Diagnostico
+por el Ministerio de Ambiente, Vivienda y Automotriz son las encargados de realizar
+Desarrollo Territorial, es la norma en cual en la ley 1972, donde cumplimos las inspecciones técnico mecánicas para
+medir los niveles de gases contaminantes.
+de agentes contaminantes que emiten entrega por primera vez con la motocicleta Esta revisión en las motocicletas se debe
+las fuentes..."
+cuantos kilómetros hace por galón,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,"The score is 0.00 because it doesn't address the question 'cuantos kilómetros hace por galón', which asks for fuel consumption (kilometers per liter). The output did not provide this information.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0,"The contextual precision score is 0.00 because the top-ranked nodes do not provide relevant information regarding 'cuantos kilómetros hace por galón'. The first node discusses fuel tank capacity, the second node talks about alloy wheels, and the third node provides information on battery warranties, none of which are related to the requested topic.","Desafortunadamente, la información sobre el consumo de combustible (kilómetros por galón) de la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+
+
+
+",El manual no lo especifica.,"Grifo de combustible
+desde el tanque hasta el carburador, este tiene 3 posiciones.
+ON:
+cantidad sea mayor a 1,2 litros, cuando la cantidad sea
+menor a la mencionada la motocicleta se apagará.
+Tapa del tanque de combustible
+Para abrir la tapa del depósito de combustible, inserte
+RES:
+la llave en la cerradura y gírela hacia la derecha y
+es menor a 1,2 litros, debe abastecer combustible lo
+levante la tapa del tanque de combustible.
+antes posible.
+La tapa se cierra empujándola hacia abajo.
+OFF:
+. 17..."
+cual es la relación de transmisión de la moto,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,0.0,"The score is 0.00 because the output does not provide the requested information about the transmission ratio of the motorcycle (cual es la relación de transmisión de la moto), and instead mentions a different vehicle, the Bajaj Boxer CT100 KS.",0.8,The score is 0.80 because only 4 out of 10 sentences in the expected output can be found in the retrieval context.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Desafortunadamente, la información sobre la relación de transmisión de la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+
+",No se especifica en el manual,"PREGUNTAS FRECUENTES
+¿Porqué son importantes • Son los que garantizan la calidad, seguridad e idoneidad de la motocicleta. En esos
+las revisiones de mantenimientos realizamos ajustes a diferentes sistemas de la motocicleta y además
+mantenimiento preventivo? recomendamos el cambio de algunas partes debido al desgaste normal por el uso
+frecuente, el cambio de estas no corresponden a fallas en la motocicleta, por el
+Para resumir son dos los factores que
+hacen que los mantenimiento preventivos
+sean ..."
+cual es el cilindraje de la moto,1.0,The faithfulness score is 1.00 because there are no apparent contradictions found between the actual output and the retrieval context.,0.0,The score is 0.00 because it does not provide any relevant information about the cylinder capacity of the motorcycle.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0,"The contextual precision score is 0.00 because all the top-ranked nodes do not directly provide information about the motorcycle's cylinder capacity, including 'Identificación de la Motocicleta', 'Encendido del motor: Arranque', and contexts discussing fuel tank, changing gears, which are ranked higher than the node with relevant information.","El cilindraje de la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+
+",el cilindraje de la moto es de 102 cc.,"Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Identificación de Los números de Motor y de VIN (Chasis) se utilizan para registrar e identificar la motocicleta
+la Motocicleta su motocicleta BA..."
+cual es la viscosidad del aceite de la moto,0.0,"Error: 1 validation error for FaithfulnessVerdict
+verdict
+  Field required [type=missing, input_value={'verdit': 'idk'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing",1.0,The score is 1.00 because it accurately addresses and answers the question about the motor oil viscosity.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.8055555555555555,"The contextual precision score is 0.81 because the relevant nodes (ranked 1, 3, and 4) are ranked higher than the irrelevant nodes (ranked 2 and 5). The first node provides direct information about the recommended engine oil viscosity (SAE 20W-50 or 10W-30), while the third and fourth nodes discuss the importance of checking the oil level and the acceptable range for the oil level in the chain, respectively. On the other hand, the second and fifth nodes do not provide any relevant information about the viscosity of the motor oil.","Desafortunadamente, la viscosidad del aceite recomendada para la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+
+","SAE 20W-50 o 10W-30, API SL, JASO MA.","un desgaste acelerado del kit de arrastre. de cambio de aceite para dar una larga vida a los componentes del motor.
+Lubrique la cadena por lo menos cada 500 km si usa Para más detalles consulte cuadro de mantenimiento periódico.
+la motocicleta en zonas muy húmedas o polvorientas.
+. 22 .
+
+ACEITE DE MOTOR
+Verificación diaria del nivel de aceite
+Mantenga siempre el nivel de aceite entre los niveles bajo y alto,
+cuando el nivel de aceite esté llegando al nivel bajo (D), indicado
+en la imagen, debe p..."
+que tipo de llantas usa la moto,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,0.0,"The score is 0.00 because it doesn't directly address the question 'que tipo de llantas usa la moto', instead discussing something not related to the type of tires used by the motorcycle.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Desafortunadamente, el tipo de llantas que usa la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+","Delantera: 2.75-17, 41P (tubetype). Trasera: 3.00-17, 50P (tubetype).","ANTES DE Asegúrese de que se encuentra física y mentalmente apto para conducir su motocicleta,
+CONDUCIR sin haber consumido alcohol ni drogas. Compruebe que tanto usted como su pasajero
+utilizan cascos para motocicletas y elementos protectores debidamente homologados por
+las normativas locales. Indique al pasajero que se agarre a la correa del asiento o a su
+cintura, que se incline con usted en las curvas y que mantenga los pies en los reposapiés,
+incluso cuando usted se detenga.
+CONOZCA Y DOMIN..."
+cada cuanto debo revisar las bujías,1.0,The faithfulness score is 1.00 because there are no contradictions found between the actual output and the retrieval context.,0.0,"The score is 0.00 because the output does not provide information relevant to how often spark plugs should be checked for a Bajaj Boxer CT100 KS, as specified in the input.",1.0,"The score is 1.00 because the recommended interval for oil change, 'Cada 5.000 km o antes si es necesario', is directly found in the retrieval context at node 1.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Desafortunadamente, la información sobre la frecuencia de revisión de las bujías de la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+",Cada 5.000 km o antes si es necesario.,"Insumos y
+Servicio Mano de Obra
+Repuestos
+Revisión de 500 - 750 km - Primeros 15 a 30 días Gratuita
+Para ayudarte a cumplir
+Revisión de 5.000 - 5.500 km o al tercer mes Gratuita
+con esto Bajaj como
+Revisión de 10.000 - 10.500 km o al sexto mes Gratuita
+cortesía te otorga la Mano
+de Obra Gratuita en las Revisión de 15.000 - 15.500 km o al noveno mes Paga el cliente
+siguientes revisiones: Revisión de 20.000- 20.500 km o al doceavo mes Paga el cliente Paga el Cliente
+Revisión de 25.000 - 25.500 km ..."
+cuanto pesa de la moto,1.0,The faithfulness score is 1.00 because there are no contradictions between the actual output and the retrieval context.,0.0,The score is 0.00 because it doesn't provide the weight of the specific motorcycle mentioned in the input.,0.0,The score is 0.00 because 'la moto pesa 109 kg.' cannot be found in the retrieval context.,0,"The contextual precision score is 0.00 because all retrieved nodes do not provide information about the weight of a specific motorcycle, with the first node being about the weight of 109 kg which does not correspond to any specific motorcycle in the question.","Desafortunadamente, el peso de la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+
+",la moto pesa 109 kg.,"Ver más contenido…
+*Las imágenes y videos mostrados en este sitio son de referencia. Determinadas
+características de las motocicletas pueden variar con respecto al modelo y versión
+presentada.
+Boxer CT100 KS
+PRECI
+VER AHORRO
+O Cotizar $
+*Modelo 2026. Precio referencial y
+VIGENTE
+$5.899.
+sujeto a cambios.
+Cotizar $ Crédito $ *Aplican términos y 000
+Crédito $
+condiciones.
+
+Tablas:
+Ver más contenido…
+*Las imágenes y videos mostrados en este sitio son de referencia. Determinadas
+características de l..."
+como revisar el nivel de aceite,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,1.0,The score is 1.00 because it directly answers the question 'como revisar el nivel de aceite' (how to check oil level in English).,1.0,The score is 1.00 because all sentences in the expected output have a matching counterpart in the retrieval context.,0.8055555555555555,"The contextual precision score is 0.81 because the relevant nodes (rank 1 and rank 3) are ranked higher than the irrelevant node (rank 2), but node 4, although relevant, has a lower ranking compared to nodes 1 and 3. This indicates that while most of the relevant information appears in the top results, there is still room for improvement by prioritizing the more directly related answers.","Para revisar el nivel de aceite de tu Bajaj Boxer CT100 KS, primero asegúrate de que el motor esté frío. Luego, ubica el tapón medidor de aceite en la motocicleta.  
+
+Extrae el tapón y límpialo. Insértalo de nuevo hasta el punto R sin roscarlo. Retiralo nuevamente y verifica que el nivel de aceite esté entre las marcas C y D en la mirilla. Si el nivel está bajo, agrega aceite hasta alcanzar la marca C. 
+
+
+Recuerda que es importante mantener el nivel de aceite entre las marcas C y D para un buen funcionamiento del motor. 
+","Colocar la moto en una superficie plana con el motor frío, extraer el tapon medidor de aceite y limpiarlo, insertar el tapon medidor hata el punto R sin roscar, retirar de nuevo el tapon y verificar que el niver de aceite este entre las marcas C y D, adicione aceite de ser necesario.","ACEITE DE MOTOR
+Verificación diaria del nivel de aceite
+Mantenga siempre el nivel de aceite entre los niveles bajo y alto,
+cuando el nivel de aceite esté llegando al nivel bajo (D), indicado
+en la imagen, debe proceder a completar hasta el nivel máximo (C)
+con aceite recomendado, sin sobrepasar el nivel máximo. A
+1.
+2. Extraiga el tapón medidor de aceite y límpielo. B
+C
+3. Inserte tapón medidor hasta el punto R sin roscar. D
+4.
+aceite esté entre las marcas C Y D.
+5. Adicione aceite de ser necesa..."
+como cambiar un fusible,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.5,"The score is 0.50 because it doesn't directly address 'how to change a fuse' as per the input, although it does provide some information about fuses.",0.0,"The score is 0.00 because the retrieved context does not contain any information about a procedure for changing fuses, as indicated by the unsupportive reasons.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Desafortunadamente, la información sobre cómo cambiar un fusible en la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+
+Te recomiendo consultar el manual del propietario de tu motocicleta para obtener instrucciones específicas sobre cómo cambiar un fusible. 
+
+",El manual no describe el procedimiento para cambio de fusibles.,"Tanque de Combustible
+Grifo de combustible
+El grifo de combustible se encarga de controlar el flujo de combustible
+desde el tanque hasta el carburador, este tiene 3 posiciones.
+ON: Permite el flujo de combustible siempre que la
+cantidad sea mayor a 1,2 litros, cuando la cantidad sea
+menor a la mencionada la motocicleta se apagará.
+Tapa del tanque de combustible
+Para abrir la tapa del depósito de combustible, inserte
+la llave en la cerradura y gírela hacia la derecha y RES: Permite el flujo de co..."
+que herramientas trae la moto,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,"The score is 0.00 because the response did not directly address the question 'what tools does the motorcycle bring?' by providing information about the tools. Instead, it discussed features unrelated to tools.",0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,"Desafortunadamente, la información sobre las herramientas que trae la Bajaj Boxer CT100 KS no está disponible en el contexto que me has proporcionado. 
+
+",Trae un kit básico de herramientas ubicado junto a la batería.,"de manera segura. • Revise la tensión de la cadena de 20 a 30 mm y
+• Lleve siempre los documentos de la motocicleta que esté bien lubricada.
+vigentes y una licencia válida de conducción. • Funcionamiento de todas las luces y bocina.
+• Evite manejar sobre arena suelta o piedras, • Movimiento suave de la dirección sin restricciones.
+donde el vehículo podría patinar. • Juego libre en la palanca de embrague de 2 a 3 mm.
+• Sujete adecuadamente la ropa suelta mientras • Regreso del estante central y l..."
+que tipo de encendido tiene la moto,0.0,Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.,0.0,The score is 0.00 because the response does not directly address the question about the type of ignition system a motorcycle has.,1.0,"The score is 1.00 because the expected output 'tiene encendido por pedal.' corresponds directly to the instruction for starting the motor found in the retrieval context, specifically '5. Mantenga el acelerador cerrado, accione el pedal de arranque con el pie.'",0.0,"Error: 1 validation error for ContextualPrecisionVerdict
+verdict
+  Field required [type=missing, input_value={'verduct': 'no', 'reason...on for the motorcycle.""}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing","Desafortunadamente, el tipo de encendido que tiene la Bajaj Boxer CT100 KS no está disponible en la información que tengo. 
+",tiene encendido por pedal.,"Identificación de
+la Motocicleta su motocicleta BAJAJ CT-100 ES particular de otros del mismo modelo y el tipo.
+El número de VIN se ubica en la parte frontal derecha El número de Motor se ubica en la parte inferior del motor
+del chasis, justo en frente del tanque de combustible del lado izquierdo, justo debajo de la palanca de cambios.
+. 13 .
+
+Tablas:
+
+Identificación de Los números de Motor y de VIN (Chasis) se utilizan para registrar e identificar la motocicleta
+la Motocicleta su motocicleta BA..."

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Asistente Virtual - Bajaj CT100</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    #chat {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+    #avatar {
+      width: 150px;
+      height: 150px;
+      background-image: url("giphy.gif"); /* Aquí tu GIF */
+      background-size: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .talking {
+      animation: talk 0.5s infinite alternate;
+    }
+
+    @keyframes talk {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .mensaje {
+      margin-top: 1rem;
+    }
+
+    .usuario {
+      color: #2980b9;
+    }
+
+    .asistente {
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <h1>Asistente Virtual - Bajaj CT100</h1>
+  <div id="avatar"></div>
+  <div id="chat">
+    <div id="mensajes"></div>
+    <input type="text" id="pregunta" placeholder="Escribe tu pregunta..." />
+    <button onclick="enviarPregunta()">Preguntar</button>
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:5000/preguntar";
+
+    function hablar(texto) {
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(texto);
+      utter.lang = "es-ES";
+
+      // Buscar una voz en español
+      const voces = synth.getVoices();
+      const vozEspanol = voces.find(v => v.lang.startsWith("es") && v.name.toLowerCase().includes("espa"));
+      if (vozEspanol) {
+        utter.voice = vozEspanol;
+      }
+
+      const avatar = document.getElementById("avatar");
+      avatar.classList.add("talking");
+
+      utter.onend = () => {
+        avatar.classList.remove("talking");
+      };
+
+      synth.speak(utter);
+    }
+
+    async function enviarPregunta() {
+      const pregunta = document.getElementById("pregunta").value.trim();
+      if (!pregunta) return;
+
+      mostrarMensaje(pregunta, "usuario");
+      document.getElementById("pregunta").value = "";
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pregunta })
+        });
+
+        const data = await res.json();
+        const respuesta = data.respuesta;
+
+        mostrarMensaje(respuesta, "asistente");
+        hablar(respuesta);
+      } catch (error) {
+        console.error("Error al preguntar:", error);
+        mostrarMensaje("Error al contactar con el asistente.", "asistente");
+      }
+    }
+
+    function mostrarMensaje(texto, tipo) {
+      const contenedor = document.getElementById("mensajes");
+      const div = document.createElement("div");
+      div.classList.add("mensaje", tipo);
+      div.textContent = (tipo === "usuario" ? "Tú: " : "🤖 Asistente: ") + texto;
+      contenedor.appendChild(div);
+      contenedor.scrollTop = contenedor.scrollHeight;
+    }
+  </script>
+</body>
+</html>
