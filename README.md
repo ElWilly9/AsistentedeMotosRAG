@@ -43,7 +43,7 @@ Se evaluaron **6 combinaciones** de embeddings y modelos de lenguaje en tareas d
 > Se identificó que la evaluación automática puede fallar en preguntas extensas, por lo que se realizaron análisis filtrados para obtener métricas más representativas.
 
 ## 🛠 Instalación y Ejecución
-
+Nota: Recuerda que para que funcione correctamente debes crear un archivo '''.env''' en el cual ingreses tu api key de groq, puedes conseguirla en el siguiente enlace: https://groq.com/
 ```bash
 git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
 cd tu_carpeta
