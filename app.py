@@ -46,11 +46,15 @@ def preguntar():
     save_chat_history(chat_history)
 
     # Guardar contexto para RAGAS
-    contextos = "\n\n".join([doc.page_content for doc in result.get("source_documents", [])])
+    contextos = [doc.page_content for doc in result.get("source_documents", [])]
     save_ragas_history(pregunta, respuesta, contextos)
 
     return jsonify({"respuesta": respuesta})
 
 if __name__ == "__main__":
+    import webbrowser
+    import os
+    ruta_html = os.path.abspath("frontend/index.html")
+    webbrowser.open(f"file:///{ruta_html}")
     app.run(debug=True)
 

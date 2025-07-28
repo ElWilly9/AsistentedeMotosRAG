@@ -125,7 +125,7 @@ def save_chat_history(history):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history[-5:], f, ensure_ascii=False, indent=2)  # Limitar a las últimas 10 interacciones
 
-def save_ragas_history(question, answer, contexts, filename="ragas/ragas_history_E2L2.json"):
+def save_ragas_history(question, answer, contexts, filename="rag_list/rag_history_assitant.json"):
     """
     Guarda la pregunta, respuesta generada, contexto recuperado y un campo ground_truth vacío en un archivo JSON para evaluación con RAGAS.
     """
@@ -225,25 +225,3 @@ def print_document_samples(chunks):
         print("Contenido:")
         print(chunk.page_content[:200] + "...")  # Primeros 200 caracteres
 
-engine = pyttsx3.init()
-engine.setProperty('rate', 200)
-engine.setProperty('volume', 1)
-
-def decir_respuesta(texto):
-    # engine = pyttsx3.init()
-    # engine.setProperty('rate', 200)
-    # engine.setProperty('volume', 1)
-    os.makedirs("audio", exist_ok=True)
-    engine.say(texto)
-    engine.save_to_file(texto, "audio/answer_ia_voz.mp3")
-    engine.runAndWait()
-
-def responder_desde_rag(pregunta, vector_store, rag_chain):
-    result = rag_chain.invoke({"question": pregunta})
-    respuesta = result["answer"]
-
-    contexts = "\n\n".join([doc.page_content for doc in result.get("source_documents", [])])
-    save_ragas_history(pregunta, respuesta, contexts)
-    decir_respuesta(respuesta)  # genera el MP3
-
-    return respuesta
