@@ -54,7 +54,7 @@ El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equili
 
 ## 🛠 Instalación y Ejecución
 
-> ⚠️ Asegúrate de tener tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
+> ⚠️ Asegúrate de tener instalado `Python 3.10` en tu entorno y tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
 
 ```bash
 git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
