@@ -17,7 +17,7 @@ from langchain.schema import Document
 import pyttsx3
 import logging
 from voz_text import query_voz
-from prueba import obtener_texto_por_voz
+import time
 
 
 # Cargar variables de entorno
@@ -124,7 +124,7 @@ def save_chat_history(history):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history[-5:], f, ensure_ascii=False, indent=2)  # Limitar a las últimas 10 interacciones
 
-def save_ragas_history(question, answer, contexts, filename="ragas/ragas_history_E2L2.json"):
+def save_ragas_history(question, answer, contexts, ground_truth="", filename="rag_list/rag_list_history_E2L2.json"):
     """
     Guarda la pregunta, respuesta generada, contexto recuperado y un campo ground_truth vacío en un archivo JSON para evaluación con RAGAS.
     """
@@ -132,7 +132,7 @@ def save_ragas_history(question, answer, contexts, filename="ragas/ragas_history
         "question": question,
         "answer": answer,
         "contexts": contexts,
-        "ground_truth": ""
+        "ground_truth": ground_truth,
     }
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
@@ -184,7 +184,6 @@ def setup_rag(vector_store, model, chunks):
     PREGUNTA DEL USUARIO: {question}
 
     INSTRUCCIONES PARA TU RESPUESTA:
-    - no generes respuestas tan rapidas, se conciso 
     - Responde ÚNICAMENTE sobre la Bajaj Boxer CT100 KS y si hablaras de otra moto, especificalo
     - Usa un tono cordial, natural y profesional en español
     - Si el usuario te pregunta sobre otra moto, especificalo
@@ -244,24 +243,40 @@ def responder_desde_rag(pregunta, vector_store, rag_chain):
 
     return respuesta
 
+def evaluar_preguntas_desde_json(json_path, rag_chain):
+    with open(json_path, "r", encoding="utf-8") as f:
+        preguntas = json.load(f)
+
+    for i, item in enumerate(preguntas, start=1):
+        question = item["question"]
+        ground_truth = item.get("ground_truth", "")
+
+        print(f"\n▶️ Pregunta {i}: {question}")
+        result = rag_chain.invoke({"question": question})
+        answer = result["answer"]
+        contexts = [doc.page_content for doc in result["source_documents"]]
+
+        print(f"🤖 Respuesta: {answer}")
+        save_ragas_history(question, answer, contexts, ground_truth=ground_truth)
+
+        time.sleep(90)  # Esperar 5 segundos para no saturar la API
+
 
 # Paso 5: Ciclo interactivo en consola
 def main():
     print("¿Quieres (C)argar la base vectorial existente o (R)ecrearla con los documentos actuales?")
     op = input("Escribe C para cargar o R para recrear: ").strip().lower()
-    # op2 = input("Que tipo de embeddings quieres usar? (1) intfloat/multilingual-e5-base (2) sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2:\n ")
+    op2 = input("Que tipo de embeddings quieres usar? (1) intfloat/multilingual-e5-base (2) sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2:\n ")
     force_reload = (op == "r")
 
-    # if op2 == "1":
-    #     embeddings = "intfloat/multilingual-e5-base"
-    # elif op2 == "2":
-    #     embeddings = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-    # else:
-    #     print("Opción no válida")
-    embeddings = "intfloat/multilingual-e5-base"
+    if op2 == "1":
+        embeddings = "intfloat/multilingual-e5-base"
+    elif op2 == "2":
+        embeddings = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    else:
+        print("Opción no válida")
     
-    # model = input("Que modelo de IA quieres usar? (1) Gemini-2.0-flash (2) Llama-3.3-70b-versatile: (3) gemma2-9b-it: \n")
-    model = "1"
+    model = input("Que modelo de IA quieres usar? (1) Gemini-2.0-flash (2) Llama-3.3-70b-versatile: (3) gemma2-9b-it: \n")
 
     if force_reload:
         print("Cargando y procesando documentos...")
@@ -288,10 +303,19 @@ def main():
         print("\nHistorial de conversación cargado:")
 
     print("\n¡Asistente virtual para Bajaj Boxer CT100 KS listo!")
-    print("Di tu pregunta (o 'salir' para terminar):")
+    #print("Di tu pregunta (o 'salir' para terminar):")
+
+    modo = input("¿Quieres usar (I)nterfaz interactiva o (A)rchivo de preguntas? [I/A]: ").strip().lower()
+
+    if modo == "a":
+        ruta_json = "rag_list/preguntas.json"
+        evaluar_preguntas_desde_json(ruta_json, rag_chain)
+        print("\n✅ Evaluación terminada. Resultados guardados.")
+        return  # termina main()
+
 
     while True:
-        query = query_voz()
+        query = input("ingresa tu pregunta: ") #query_voz() <--- si quieres usar las preguntras por voz, pero no podras usar la interfaz web
         if not query:
             continue
         if query.lower() == "salir":
@@ -308,7 +332,7 @@ def main():
 
         # Guardar para evaluación con RAGAS
         # El contexto recuperado está en result["source_documents"]
-        contexts = "\n\n".join([doc.page_content for doc in result.get("source_documents", [])])
+        contexts = [doc.page_content for doc in result["source_documents"]]
         save_ragas_history(query, respuesta, contexts)
 
         # Preguntar si desea hacer otra consulta o salir

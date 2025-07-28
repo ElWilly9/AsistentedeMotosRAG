@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import re
 from asistente_rag import (
     load_and_chunk_pdfs, create_or_load_vector_store, setup_rag,
     load_chat_history, save_chat_history, save_ragas_history
@@ -8,9 +9,11 @@ from asistente_rag import (
 app = Flask(__name__)
 CORS(app)
 
+
+
 # Configuración
 EMBEDDING_MODEL = "intfloat/multilingual-e5-base"
-IA_MODEL = "1"  # Gemini Flash
+IA_MODEL = "2"  # llama-3.3-70b-versatile
 FORCE_RELOAD = False
 
 # Cargar documentos
@@ -36,6 +39,7 @@ def preguntar():
 
     result = rag_chain.invoke({"question": pregunta})
     respuesta = result["answer"]
+
 
     # Guardar historial
     chat_history.append({"question": pregunta, "answer": respuesta})

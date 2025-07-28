@@ -1,0 +1,115 @@
+[
+  {
+    "question": "cual es el torque y potencia maxima que tiene la moto",
+    "ground_truth": "Potencia: 7.59 HP a 7.500 RPM. Torque: 8.24 Nm a 5.500 RPM."
+  },
+  {
+    "question": "cada cuanto es recomendable cambiarle el aceite a la moto y cuanto debo echarle",
+    "ground_truth": "Cada 5.000 a 5.500 km o cada 3 meses. Cantidad: 1.000 cc (cambio normal), 1.100 cc (con desensamble)."
+  },
+  {
+    "question": "cual es la elongadura recomendada de la cadena y cada cuanto debo cambiar el kit de arrastre",
+    "ground_truth": "Holgura recomendada entre 20 y 30 mm. Lubricar cada 500 km. Cambiar el kit cuando haya desgaste visible."
+  },
+  {
+    "question": "en que parte puedo encontrar la bateria de la moto",
+    "ground_truth": "Está ubicada en el interior de la cubierta lateral izquierda."
+  },
+  {
+    "question": "en que parte puedo encontrar el serial del chasis y el del motor de la moto",
+    "ground_truth": "VIN: parte frontal derecha del chasis. Motor: parte inferior izquierda, debajo de la palanca de cambios."
+  },
+  {
+    "question": "cuanta gasolina le cabe a la moto",
+    "ground_truth": "Capacidad total: 10.5 litros. Reserva: 2.3 litros."
+  },
+  {
+    "question": "en donde se encuentra la llave de gasolina de la moto",
+    "ground_truth": "Está en el lateral del motor. Posiciones: ON, RES y OFF."
+  },
+  {
+    "question": "cuales son las especificaciones de la bateria ",
+    "ground_truth": "12V, 3Ah, tipo MF (libre de mantenimiento)."
+  },
+  {
+    "question": "cuantas marchas tiene la moto",
+    "ground_truth": "Tiene 4 velocidades."
+  },
+  {
+    "question": "cada cuanto debo realizarle un mantenimiento preventivo o uno correctivo",
+    "ground_truth": "Preventivo cada 5.000 km. Correctivo depende del desgaste. Es recomendable hacerlo en centros UMA."
+  },
+  {
+    "question": "que tan alta es la moto",
+    "ground_truth": "Altura total: 1.072 mm."
+  },
+  {
+    "question": "cual es la altura del asiento con respecto al piso",
+    "ground_truth": "Altura del asiento: 784 mm."
+  },
+  {
+    "question": "cual es la presión de las llantas",
+    "ground_truth": "Delantera: 25 PSI. Trasera sin pasajero: 28 PSI. Trasera con pasajero: 32 PSI."
+  },
+  {
+    "question": "que tipos de frenos tiene la moto ",
+    "ground_truth": "Frenos de tambor adelante y atrás, ambos de 110 mm."
+  },
+  {
+    "question": "como hago el despegue o asentamiento del motor",
+    "ground_truth": "Evitar acelerones y frenadas bruscas durante los primeros 2.000 km. Seguir los límites de velocidad por marcha."
+  },
+  {
+    "question": "cuanto tiempo dura la garantía de la moto",
+    "ground_truth": "12 meses o 20.000 kilómetros, lo que ocurra primero."
+  },
+  {
+    "question": "cuanto es la emisión de gases de la moto",
+    "ground_truth": "la moto cumple con la Ley 1972 de Julio de 2019, que regula los niveles de emisión de gases contaminantes en Colombia. Los niveles máximos permitidos para gases contaminantes en Colombia son: Monóxido de Carbono (CO): máximo 4.5%. Hidrocarburos (HC): máximo 2000 ppm."
+
+  },
+  {
+    "question": "cuantos kilómetros hace por galón",
+    "ground_truth": "El manual no lo especifica."
+  },
+  {
+    "question": "cual es la relación de transmisión de la moto",
+    "ground_truth": "No se especifica en el manual"
+  },
+  {
+    "question": "cual es el cilindraje de la moto",
+    "ground_truth": "el cilindraje de la moto es de 102 cc."
+  },
+  {
+    "question": "cual es la viscosidad del aceite de la moto",
+    "ground_truth": "SAE 20W-50 o 10W-30, API SL, JASO MA."
+  },
+  {
+    "question": "que tipo de llantas usa la moto",
+    "ground_truth": "Delantera: 2.75-17, 41P (tubetype). Trasera: 3.00-17, 50P (tubetype)."
+  },
+  {
+    "question": "cada cuanto debo revisar las bujías",
+    "ground_truth": "Cada 5.000 km o antes si es necesario."
+  },
+  {
+    "question": "cuanto peso de la moto",
+    "ground_truth": "la moto pesa 109 kg."
+  },
+  {
+    "question": "como revisar el nivel de aceite",
+    "ground_truth": "Colocar la moto en una superficie plana con el motor frío, extraer el tapon medidor de aceite y limpiarlo, insertar el tapon medidor hata el punto R sin roscar, retirar de nuevo el tapon y verificar que el niver de aceite este entre las marcas C y D, adicione aceite de ser necesario."
+  },
+  {
+    "question": "como cambiar un fusible",
+    "ground_truth": "El manual no describe el procedimiento para cambio de fusibles."
+  },
+  {
+    "question": "que herramientas trae la moto",
+    "ground_truth": "Trae un kit básico de herramientas ubicado junto a la batería."
+  },
+  {
+    "question": "que tipo de encendido tiene la moto",
+    "ground_truth": "tiene encendido por pedal."
+  }
+]

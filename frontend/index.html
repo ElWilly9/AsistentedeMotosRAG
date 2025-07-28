@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Asistente Virtual - Bajaj CT100</title>
+  <title>Asistente Virtual - Bajaj CT100 KS </title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      background-color: #eef2f3;
       margin: 0;
       padding: 2rem;
       display: flex;
@@ -31,7 +31,7 @@
     #avatar {
       width: 150px;
       height: 150px;
-      background-image: url("giphy.gif"); /* Aquí tu GIF */
+      background-image: url("avatar.png"); /* Usa tu imagen */
       background-size: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
@@ -67,7 +67,7 @@
   </style>
 </head>
 <body>
-  <h1>Asistente Virtual - Bajaj CT100</h1>
+  <h1>Asistente Virtual - Bajaj CT100 KS</h1>
   <div id="avatar"></div>
   <div id="chat">
     <div id="mensajes"></div>
@@ -79,16 +79,20 @@
     const API_URL = "http://localhost:5000/preguntar";
 
     function hablar(texto) {
+
       const synth = window.speechSynthesis;
-      const utter = new SpeechSynthesisUtterance(texto);
+
+
+       // 🧹 Limpiar caracteres especiales (Markdown, símbolos innecesarios)
+      let textoLimpio = texto.replace(/[*_~#`>\\\/{}\[\]()<>]/g, "");
+      textoLimpio = textoLimpio.replace(/[\r\n]+/g, ". "); // Saltos de línea como pausas
+      textoLimpio = textoLimpio.replace(/\s{2,}/g, " ");   // Quitar espacios múltiples
+
+      const utter = new SpeechSynthesisUtterance(textoLimpio);
       utter.lang = "es-ES";
 
-      // Buscar una voz en español
-      const voces = synth.getVoices();
-      const vozEspanol = voces.find(v => v.lang.startsWith("es") && v.name.toLowerCase().includes("espa"));
-      if (vozEspanol) {
-        utter.voice = vozEspanol;
-      }
+      // const utter = new SpeechSynthesisUtterance(texto);
+      // utter.lang = "es-ES";
 
       const avatar = document.getElementById("avatar");
       avatar.classList.add("talking");
@@ -99,6 +103,30 @@
 
       synth.speak(utter);
     }
+
+    // function hablar(texto) {
+    //   const synth = window.speechSynthesis;
+    //   const utter = new SpeechSynthesisUtterance(texto);
+    //   utter.lang = "es-ES";
+
+    //   const voices = synth.getVoices();
+  
+    //   // Filtra por idioma (puedes cambiar el criterio según lo que veas en consola)
+    //   const vozElegida = voices.find(v => v.lang === "es-ES" && v.name.includes("Google") || v.name.includes("Microsoft"));
+  
+    //   if (vozElegida) {
+    //     utter.voice = vozElegida;
+    //   }
+
+    //   const avatar = document.getElementById("avatar");
+    //   avatar.classList.add("talking");
+
+    //   utter.onend = () => {
+    //     avatar.classList.remove("talking");
+    //   };
+
+    //   synth.speak(utter);
+    // }
 
     async function enviarPregunta() {
       const pregunta = document.getElementById("pregunta").value.trim();
