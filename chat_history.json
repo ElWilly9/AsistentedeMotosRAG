@@ -1,9 +1,5 @@
 [
   {
-    "question": "dime el torque maximo y la potencia maxima de la moto",
-    "answer": "La Bajaj Boxer CT100 KS tiene un torque máximo de 8.24 N.m a 5500 rpm y una potencia máxima de 7.59 Hp a 7500 rpm. Estos valores están especificados en la documentación técnica proporcionada."
-  },
-  {
     "question": "dime acerca del aceite, cual debo usar?",
     "answer": "El tipo de aceite recomendado para la Bajaj Boxer CT100 KS es de viscosidad SAE 20 W 50 / 10 W 30, con servicio API SL y JASO MA. Es importante verificar el nivel de aceite 4T antes de encender el motor para asegurarse de que esté en el nivel adecuado. Esta información se encuentra en el manual de Usuario y Garantía de la motocicleta."
   },
@@ -18,5 +14,9 @@
   {
     "question": "de hecho, se le dice KS porque su sistema de arranque es kick start",
     "answer": "La designación \"KS\" en la Bajaj Boxer CT100 KS se refiere a que esta motocicleta cuenta con un sistema de arranque por pedal, es decir, \"Kick Start\" en inglés. Esto significa que, para encender el motor, es necesario accionar el pedal de arranque con el pie. Esta característica es específica de este modelo y es una de las formas en que se distingue de otros modelos que podrían tener arranque eléctrico. En el contexto proporcionado, se menciona que el arranque es por pedal, lo que confirma que \"KS\" se refiere a este tipo de arranque."
+  },
+  {
+    "question": "en donde se encuentra la bateria",
+    "answer": "La batería de la Bajaj Boxer CT100 KS se encuentra ubicada en el interior de la cubierta izquierda. También se menciona que el kit de herramientas está ubicado al lado de la batería. Recuerda que es importante cuidar la batería y no conducir la moto con la batería desconectada o averiada para evitar daños en los componentes eléctricos y electrónicos."
   }
 ]
