@@ -1,6 +1,6 @@
 # 🏍️ Asistente de MotosRAG
 
-Asistente Virtual Interactivo para resolución de inquietudes acerca de tu moto implementando RAG, creado e implementado por **William Andrés Velásquez Ruiz** y **Ángel Andrés Martínez Oñate** como proyecto para la asignatura de Inteligencia Artificial.
+Asistente Virtual Interactivo para resolución de inquietudes acerca de tu moto implementando RAG, creado e implementado por **William Andrés Velásquez Ruiz**, **Ángel Andrés Martínez Oñate** y **Juan Pablo Hoyos Sanchez**.
 
 Este repositorio contiene el desarrollo de un **asistente virtual interactivo** para la recomendación de repuestos y la resolución de dudas técnicas sobre motocicletas, específicamente la **Bajaj Boxer CT100 KS**, utilizando un sistema **RAG (Retrieval-Augmented Generation)** integrado con modelos de lenguaje de gran escala (**LLMs**).
 
