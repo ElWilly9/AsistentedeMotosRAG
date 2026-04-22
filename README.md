@@ -52,6 +52,23 @@ Se evaluaron **6 combinaciones** de modelos de embeddings y generativos en tarea
 El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equilibrio óptimo entre fidelidad, precisión y relevancia.  
 ---
 
+## 📖 Cómo citar este trabajo
+
+Si este repositorio o el artículo asociado te fue útil en tu investigación, desarrollo o trabajo académico, puedes citarlo de la siguiente manera:
+
+### Formato BibTeX
+
+```bibtex
+@article{velasquez2026asistente,
+  author    = {William Andrés Velasquez Ruiz and Ángel Andrés Martínez Oñate and Juan Pablo Hoyos Sánchez},
+  title     = {Asistente virtual interactivo para resolver consultas relacionadas con motocicletas mediante RAG},
+  journal   = {Prospectiva},
+  volume    = {24},
+  number    = {1},
+  year      = {2026},
+  doi       = {10.15665/rp.v24i1.3828}
+}
+
 ## 🛠 Instalación y Ejecución
 
 > ⚠️ Asegúrate de tener instalado `Python 3.10.0` en tu entorno y tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
