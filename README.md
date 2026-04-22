@@ -52,6 +52,17 @@ Se evaluaron **6 combinaciones** de modelos de embeddings y generativos en tarea
 El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equilibrio óptimo entre fidelidad, precisión y relevancia.  
 ---
 
+## 🛠 Instalación y Ejecución
+
+> ⚠️ Asegúrate de tener instalado `Python 3.10.0` en tu entorno y tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
+
+```bash
+git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
+cd AsistentedeMotosRAG
+pip install -r requirements.txt
+python app.py
+
+
 ## 📖 Cómo citar este trabajo
 
 Si este repositorio o el artículo asociado te fue útil en tu investigación, desarrollo o trabajo académico, puedes citarlo de la siguiente manera:
@@ -68,13 +79,3 @@ Si este repositorio o el artículo asociado te fue útil en tu investigación, d
   year      = {2026},
   doi       = {10.15665/rp.v24i1.3828}
 }
-
-## 🛠 Instalación y Ejecución
-
-> ⚠️ Asegúrate de tener instalado `Python 3.10.0` en tu entorno y tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
-
-```bash
-git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
-cd AsistentedeMotosRAG
-pip install -r requirements.txt
-python app.py
