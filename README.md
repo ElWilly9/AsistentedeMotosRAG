@@ -61,6 +61,7 @@ git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
 cd AsistentedeMotosRAG
 pip install -r requirements.txt
 python app.py
+```
 
 ---
 
@@ -80,9 +81,13 @@ Si este repositorio o el artículo asociado te fue útil en tu investigación, d
   year      = {2026},
   doi       = {10.15665/rp.v24i1.3828}
 }
+```
 
 ### IEEE
 
 W. A. Velasquez Ruiz, Á. A. Martínez Oñate y J. P. Hoyos Sánchez,
 “Asistente virtual interactivo para resolver consultas relacionadas con motocicletas mediante RAG,”
 Prospectiva, vol. 24, no. 1, 2026, doi: 10.15665/rp.v24i1.3828.
+
+### DOI
+DOI: https://doi.org/10.15665/rp.v24i1.3828
