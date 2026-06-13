@@ -50,7 +50,7 @@ Se evaluaron **6 combinaciones** de modelos de embeddings y generativos en tarea
 
 📌 **Configuración final del asistente**:
 El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equilibrio óptimo entre fidelidad, precisión y relevancia.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
 
 ## 🛠 Instalación y Ejecución
 
@@ -104,12 +104,11 @@ python3.10 -m venv .venv
 python -m venv .venv
 
 # Activar
-source .venv/bin/activate
+source .venv/Scripts/activate
 
 # Verificar
 python --version
 ```
-
 
 ## 📖 Cómo citar este trabajo
 
