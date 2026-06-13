@@ -48,13 +48,21 @@ Se evaluaron **6 combinaciones** de modelos de embeddings y generativos en tarea
 
 > Se identificó que las herramientas automáticas de evaluación pueden fallar en preguntas extensas, por lo que se realizaron análisis filtrados para obtener métricas más representativas.
 
-📌 **Configuración final del asistente**:  
-El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equilibrio óptimo entre fidelidad, precisión y relevancia.  
----
+📌 **Configuración final del asistente**:
+El sistema quedó configurado con la combinación **E1L2**, al ofrecer un equilibrio óptimo entre fidelidad, precisión y relevancia.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🛠 Instalación y Ejecución
 
-> ⚠️ Asegúrate de tener instalado `Python 3.10.0` en tu entorno y tu archivo `.env` configurado correctamente con tu clave de acceso para Groq API. Puedes conseguirla en: [https://groq.com](https://groq.com)
+> ⚠️ Asegúrate de tener instalado `Python 3.10.0` en tu entorno. Además, crea un archivo `.env` en la raíz del proyecto con tus claves de API.
+
+> - Nombrar la clave de Groq exactamente así: `GROQ_API_KEY` (mayúsculas, sin comillas).
+> - Ejemplo mínimo de `.env`:
+>
+> ```text
+> GEMINI_API_KEY=tu_clave_gemini_aqui
+> GROQ_API_KEY=tu_clave_groq_aqui
+> ```
 
 ```bash
 git clone https://github.com/ElWilly9/AsistentedeMotosRAG.git
@@ -63,7 +71,45 @@ pip install -r requirements.txt
 python app.py
 ```
 
----
+Crear y activar un entorno virtual
+
+Windows (PowerShell):
+
+```powershell
+# Crear el venv usando el launcher (usa Python 3.10 si está instalado)
+py -3.10 -m venv .venv
+
+# Activar en PowerShell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+
+# Verificar versión
+python --version
+```
+
+Windows (CMD):
+
+```cmd
+py -3.10 -m venv .venv
+.\.venv\Scripts\activate.bat
+python --version
+```
+
+Linux / macOS / Bash:
+
+```bash
+# Crear el venv (si tienes python3.10 en PATH)
+python3.10 -m venv .venv
+# o
+python -m venv .venv
+
+# Activar
+source .venv/bin/activate
+
+# Verificar
+python --version
+```
+
 
 ## 📖 Cómo citar este trabajo
 
@@ -90,4 +136,5 @@ W. A. Velasquez Ruiz, Á. A. Martínez Oñate y J. P. Hoyos Sánchez,
 Prospectiva, vol. 24, no. 1, 2026, doi: 10.15665/rp.v24i1.3828.
 
 ### DOI
+
 DOI: https://doi.org/10.15665/rp.v24i1.3828
