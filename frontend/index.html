@@ -2,138 +2,291 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Asistente Virtual - Bajaj CT100 KS </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asistente Virtual - Bajaj CT100 KS</title>
   <style>
+    :root {
+      --azul: #2563eb;
+      --azul-osc: #1e40af;
+      --verde: #16a34a;
+      --bg: #0f172a;
+      --burbuja-user: #2563eb;
+      --burbuja-bot: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #eef2f3;
+      font-family: 'Segoe UI', system-ui, Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 480px;
+      height: 88vh;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ---------- Cabecera ---------- */
+    header {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-osc) 100%);
+      color: #fff;
+      padding: 1rem 1.2rem;
+      display: flex;
       align-items: center;
+      gap: 0.9rem;
     }
 
-    h1 {
-      color: #2c3e50;
-    }
-
-    #chat {
-      width: 100%;
-      max-width: 600px;
-      background: #fff;
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-
-    #avatar {
-      width: 150px;
-      height: 150px;
-      background-image: url("avatar.png"); /* Usa tu imagen */
-      background-size: cover;
+    .avatar {
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease-in-out;
+      background-image: url("avatar.png");
+      background-size: cover;
+      background-position: center;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
     }
 
-    .talking {
-      animation: talk 0.5s infinite alternate;
-    }
-
+    .avatar.talking { animation: talk 0.45s infinite alternate; }
     @keyframes talk {
       from { transform: scale(1); }
-      to { transform: scale(1.05); }
+      to { transform: scale(1.08); }
     }
 
-    input, button {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-top: 0.5rem;
+    .titulo { flex: 1; }
+    .titulo h1 { font-size: 1.05rem; margin: 0; }
+    .titulo .estado {
+      font-size: 0.78rem;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .punto {
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ---------- Toggle de voz ---------- */
+    .voz-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .switch {
+      position: relative;
+      width: 38px; height: 20px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+    .switch::after {
+      content: "";
+      position: absolute;
+      top: 2px; left: 2px;
+      width: 16px; height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .voz-toggle.activo .switch { background: #4ade80; }
+    .voz-toggle.activo .switch::after { transform: translateX(18px); }
+
+    /* ---------- Mensajes ---------- */
+    #mensajes {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.2rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
     }
 
     .mensaje {
-      margin-top: 1rem;
+      max-width: 80%;
+      padding: 0.7rem 0.95rem;
+      border-radius: 16px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      animation: aparecer 0.25s ease;
+    }
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .usuario {
-      color: #2980b9;
+      align-self: flex-end;
+      background: var(--burbuja-user);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .asistente {
+      align-self: flex-start;
+      background: var(--burbuja-bot);
+      color: #1e293b;
+      border-bottom-left-radius: 4px;
     }
 
-    .asistente {
-      color: #27ae60;
+    /* indicador "escribiendo" */
+    .typing { display: flex; gap: 4px; align-items: center; }
+    .typing span {
+      width: 7px; height: 7px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: bounce 1.2s infinite;
     }
+    .typing span:nth-child(2) { animation-delay: 0.2s; }
+    .typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* ---------- Entrada ---------- */
+    .barra {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.8rem;
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+    }
+    #pregunta {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 24px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    #pregunta:focus { border-color: var(--azul); }
+
+    #enviar {
+      width: 46px; height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: var(--azul);
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      flex-shrink: 0;
+    }
+    #enviar:hover { background: var(--azul-osc); }
+    #enviar:active { transform: scale(0.92); }
+    #enviar:disabled { background: #94a3b8; cursor: not-allowed; }
   </style>
 </head>
 <body>
-  <h1>Asistente Virtual - Bajaj CT100 KS</h1>
-  <div id="avatar"></div>
-  <div id="chat">
+  <div class="app">
+    <header>
+      <div class="avatar" id="avatar"></div>
+      <div class="titulo">
+        <h1>Asistente Bajaj CT100 KS</h1>
+        <div class="estado"><span class="punto"></span> En línea</div>
+      </div>
+      <div class="voz-toggle activo" id="vozToggle" title="Activar o desactivar la voz">
+        <span id="vozIcono">🔊</span>
+        <div class="switch"></div>
+      </div>
+    </header>
+
     <div id="mensajes"></div>
-    <input type="text" id="pregunta" placeholder="Escribe tu pregunta..." />
-    <button onclick="enviarPregunta()">Preguntar</button>
+
+    <div class="barra">
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..." autocomplete="off" />
+      <button id="enviar" title="Enviar">➤</button>
+    </div>
   </div>
 
   <script>
     const API_URL = "http://localhost:5000/preguntar";
 
+    const inputPregunta = document.getElementById("pregunta");
+    const btnEnviar = document.getElementById("enviar");
+    const contenedor = document.getElementById("mensajes");
+    const avatar = document.getElementById("avatar");
+    const vozToggle = document.getElementById("vozToggle");
+    const vozIcono = document.getElementById("vozIcono");
+
+    let vozActiva = true;
+
+    // ---------- Toggle de voz ----------
+    vozToggle.addEventListener("click", () => {
+      vozActiva = !vozActiva;
+      vozToggle.classList.toggle("activo", vozActiva);
+      vozIcono.textContent = vozActiva ? "🔊" : "🔇";
+      if (!vozActiva) window.speechSynthesis.cancel(); // corta la voz si está hablando
+    });
+
+    // ---------- Voz del asistente (navegador) ----------
     function hablar(texto) {
-
+      if (!vozActiva) return;
       const synth = window.speechSynthesis;
+      synth.cancel();
 
+      let limpio = texto.replace(/[*_~#`>\\\/{}\[\]()<>]/g, "");
+      limpio = limpio.replace(/[\r\n]+/g, ". ").replace(/\s{2,}/g, " ");
 
-       // 🧹 Limpiar caracteres especiales (Markdown, símbolos innecesarios)
-      let textoLimpio = texto.replace(/[*_~#`>\\\/{}\[\]()<>]/g, "");
-      textoLimpio = textoLimpio.replace(/[\r\n]+/g, ". "); // Saltos de línea como pausas
-      textoLimpio = textoLimpio.replace(/\s{2,}/g, " ");   // Quitar espacios múltiples
-
-      const utter = new SpeechSynthesisUtterance(textoLimpio);
+      const utter = new SpeechSynthesisUtterance(limpio);
       utter.lang = "es-ES";
-
-      // const utter = new SpeechSynthesisUtterance(texto);
-      // utter.lang = "es-ES";
-
-      const avatar = document.getElementById("avatar");
       avatar.classList.add("talking");
-
-      utter.onend = () => {
-        avatar.classList.remove("talking");
-      };
-
+      utter.onend = () => avatar.classList.remove("talking");
       synth.speak(utter);
     }
 
-    // function hablar(texto) {
-    //   const synth = window.speechSynthesis;
-    //   const utter = new SpeechSynthesisUtterance(texto);
-    //   utter.lang = "es-ES";
+    // ---------- Mostrar burbujas ----------
+    function mostrarMensaje(texto, tipo) {
+      const div = document.createElement("div");
+      div.classList.add("mensaje", tipo);
+      div.textContent = texto;
+      contenedor.appendChild(div);
+      contenedor.scrollTop = contenedor.scrollHeight;
+      return div;
+    }
 
-    //   const voices = synth.getVoices();
-  
-    //   // Filtra por idioma (puedes cambiar el criterio según lo que veas en consola)
-    //   const vozElegida = voices.find(v => v.lang === "es-ES" && v.name.includes("Google") || v.name.includes("Microsoft"));
-  
-    //   if (vozElegida) {
-    //     utter.voice = vozElegida;
-    //   }
+    function mostrarEscribiendo() {
+      const div = document.createElement("div");
+      div.classList.add("mensaje", "asistente");
+      div.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+      contenedor.appendChild(div);
+      contenedor.scrollTop = contenedor.scrollHeight;
+      return div;
+    }
 
-    //   const avatar = document.getElementById("avatar");
-    //   avatar.classList.add("talking");
-
-    //   utter.onend = () => {
-    //     avatar.classList.remove("talking");
-    //   };
-
-    //   synth.speak(utter);
-    // }
-
+    // ---------- Enviar pregunta ----------
     async function enviarPregunta() {
-      const pregunta = document.getElementById("pregunta").value.trim();
+      const pregunta = inputPregunta.value.trim();
       if (!pregunta) return;
 
       mostrarMensaje(pregunta, "usuario");
-      document.getElementById("pregunta").value = "";
+      inputPregunta.value = "";
+      btnEnviar.disabled = true;
+
+      const escribiendo = mostrarEscribiendo();
 
       try {
         const res = await fetch(API_URL, {
@@ -141,26 +294,36 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ pregunta })
         });
-
         const data = await res.json();
-        const respuesta = data.respuesta;
+        escribiendo.remove();
 
+        const respuesta = data.respuesta || data.error || "Sin respuesta.";
         mostrarMensaje(respuesta, "asistente");
         hablar(respuesta);
       } catch (error) {
         console.error("Error al preguntar:", error);
-        mostrarMensaje("Error al contactar con el asistente.", "asistente");
+        escribiendo.remove();
+        mostrarMensaje("⚠️ Error al contactar con el asistente.", "asistente");
+      } finally {
+        btnEnviar.disabled = false;
+        inputPregunta.focus();
       }
     }
 
-    function mostrarMensaje(texto, tipo) {
-      const contenedor = document.getElementById("mensajes");
-      const div = document.createElement("div");
-      div.classList.add("mensaje", tipo);
-      div.textContent = (tipo === "usuario" ? "Tú: " : "🤖 Asistente: ") + texto;
-      contenedor.appendChild(div);
-      contenedor.scrollTop = contenedor.scrollHeight;
-    }
+    // ---------- Eventos ----------
+    btnEnviar.addEventListener("click", enviarPregunta);
+    inputPregunta.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        enviarPregunta();
+      }
+    });
+
+    // Mensaje de bienvenida
+    window.addEventListener("load", () => {
+      mostrarMensaje("¡Hola! 👋 Soy tu asistente para la Bajaj Boxer CT100 KS. ¿En qué te ayudo?", "asistente");
+      inputPregunta.focus();
+    });
   </script>
 </body>
 </html>

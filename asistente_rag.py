@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_chroma import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
@@ -40,6 +41,27 @@ CHUNK_OVERLAP = 100
 def limpiar_consola():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+# Embeddings: los modelos E5 (intfloat/e5) necesitan prefijos "query:"/"passage:"
+def build_embeddings(model_name):
+    if "e5" in model_name.lower():
+        return HuggingFaceBgeEmbeddings(
+            model_name=model_name,
+            encode_kwargs={"normalize_embeddings": True},
+            query_instruction="query: ",
+            embed_instruction="passage: ",
+        )
+    return HuggingFaceEmbeddings(model_name=model_name)
+
+# OCR para páginas que son imágenes (texto escaneado dentro del PDF)
+def ocr_pagina(page):
+    try:
+        import pytesseract
+        imagen = page.to_image(resolution=300).original
+        return pytesseract.image_to_string(imagen, lang="spa")
+    except Exception as e:
+        print(f"  (OCR no disponible para esta página: {e})")
+        return ""
+
 # Paso 1: Cargar y chunkear PDFs
 def load_and_chunk_pdfs():
     documents = []
@@ -49,8 +71,14 @@ def load_and_chunk_pdfs():
             with pdfplumber.open(file_path) as pdf:
                 for page_num, page in enumerate(pdf.pages):
                     # Extraer texto
-                    text = page.extract_text()
-                    
+                    text = page.extract_text() or ""
+
+                    # Si la página casi no tiene texto, probablemente es una imagen -> OCR
+                    if len(text.strip()) < 30:
+                        ocr_text = ocr_pagina(page)
+                        if ocr_text.strip():
+                            text = (text + "\n" + ocr_text).strip()
+
                     # Extraer tablas
                     tables = page.extract_tables()
                     table_text = ""
@@ -91,17 +119,35 @@ def create_or_load_vector_store(chunks, persist_directory=PERSIST_DIR, force_rel
     if os.path.exists(persist_directory) and os.listdir(persist_directory) and not force_reload:
         vector_store = Chroma(
             collection_name="bajaj_boxer",
-            embedding_function=HuggingFaceEmbeddings(model_name=embedding),
+            embedding_function=build_embeddings(embedding),
             persist_directory=persist_directory
         )
     else:
         vector_store = Chroma.from_documents(
             documents=chunks,
-            embedding=HuggingFaceEmbeddings(model_name=embedding),
+            embedding=build_embeddings(embedding),
             collection_name="bajaj_boxer",
             persist_directory=persist_directory
         )
     return vector_store
+
+# Búsqueda híbrida: BM25 (palabras exactas) + vectorial con MMR (significado)
+def get_retriever(vector_store):
+    chroma_ret = vector_store.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": 5, "fetch_k": 20}
+    )
+    try:
+        stored = vector_store.get()
+        textos = stored.get("documents", [])
+        metadatos = stored.get("metadatas", [])
+        if textos:
+            bm25 = BM25Retriever.from_texts(textos, metadatas=metadatos)
+            bm25.k = 5
+            return EnsembleRetriever(retrievers=[bm25, chroma_ret], weights=[0.4, 0.6])
+    except Exception as e:
+        print(f"No se pudo crear BM25, usando solo búsqueda vectorial: {e}")
+    return chroma_ret
 
 '''def inicializar_Bm25(chunks):
     texts = [chunk.page_content for chunk in chunks]
@@ -154,7 +200,7 @@ def setup_rag(vector_store, model, chunks):
         )
     elif model == "2":
         llm = ChatGroq(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             api_key=api_key_groq,
             temperature=0
         )
@@ -193,9 +239,9 @@ def setup_rag(vector_store, model, chunks):
     - Si la información está en una tabla, incluye los valores específicos
     - Si la información no está en el contexto, dilo claramente
     - Proporciona respuestas prácticas y útiles para el usuario
-    - Incluye detalles técnicos relevantes cuando sea apropiado
+    - Incluye detalles técnicos relevantes cuando te lo pidan solamente
     - Si mencionas especificaciones técnicas, cita los valores exactos
-    - Mantén la respuesta completa pero concisa, no la hagas tan extensa
+    - se concizo, no te excedas
 
     RESPUESTA:
     """ 
@@ -203,10 +249,7 @@ def setup_rag(vector_store, model, chunks):
         input_variables=["chat_history", "context", "question"],
         template=prompt_template
     )
-    '''bm25 = inicializar_Bm25(chunks)
-    inicializar_chroma = vector_store.as_retriever(search_kwargs={"k": 5})
-    retriever = combine_serch(retrievers=[bm25, inicializar_chroma], weights=[0.5, 0.5])'''
-    retriever = vector_store.as_retriever(search_kwargs={"k": 5})
+    retriever = get_retriever(vector_store)
     rag_chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=retriever,

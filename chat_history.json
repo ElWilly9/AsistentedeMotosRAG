@@ -1,22 +1,22 @@
 [
   {
-    "question": "dime acerca del aceite, cual debo usar?",
-    "answer": "El tipo de aceite recomendado para la Bajaj Boxer CT100 KS es de viscosidad SAE 20 W 50 / 10 W 30, con servicio API SL y JASO MA. Es importante verificar el nivel de aceite 4T antes de encender el motor para asegurarse de que esté en el nivel adecuado. Esta información se encuentra en el manual de Usuario y Garantía de la motocicleta."
+    "question": "en donde se encuentra ubicada la bateria",
+    "answer": "**Batería – Bajaj Boxer CT100 KS**\n\nLa batería está **ubicada dentro de la cubierta izquierda** de la motocicleta, justo bajo el asiento (sobre los asientos de caucho). Para acceder a ella es necesario retirar la cubierta izquierda del panel lateral."
   },
   {
-    "question": "como son las luces",
-    "answer": "La Bajaj Boxer CT100 KS cuenta con un sistema de iluminación básico pero efectivo. Las luces delanteras son de tipo halógeno, con una potencia de 12V y 35/35W. La luz trasera y la luz de freno también son de tipo halógeno, con una potencia de 12V y 5W. Es importante mencionar que no hay información sobre luces LED en el modelo estándar de la Bajaj Boxer CT100 KS. Si necesitas más detalles o especificaciones técnicas, no dudes en preguntar."
+    "question": "como se que aceite echarle y cuando echarselo?",
+    "answer": "**Tipo de aceite**\n\n- La Boxer CT100 KS requiere **aceite 4‑tiempo (4T)**.  \n- Bajaj recomienda usar su **Aceite Genuino Bajaj (BGO)**, que cumple con la especificación JASO MA y es adecuado para el motor de 100 cc.\n\n**Intervalos de cambio**\n\n| Situación | Intervalo recomendado |\n|-----------|-----------------------|\n| **Durante el período de garantía** | Cada **2 000 km** (o cada 1 mes, lo que ocurra primero). |\n| **Uso normal después de la garantía** | Cada **5 000 – 5 500 km** o **cada 3 mes**, lo que ocurra primero. |\n\n**Cómo comprobarlo**\n\n1. **Revisa el nivel** con la varilla (mirilla) con el motor apagado y frío; mantén el nivel entre la marca superior e inferior.  \n2. **Anota el kilometraje** del último cambio; si supera el intervalo indicado, programa el cambio.  \n\n**Resumen rápido**\n\n- Usa aceite 4T, preferiblemente **Bajaj Genuine Oil (BGO)**.  \n- Cambia cada **2 000 km** durante la garantía; después, cada **5 000‑5 500 km** o **3 meses**, lo que llegue primero.  \n\nSi tienes dudas sobre la marca exacta disponible en tu zona, consulta a tu **Centro de Servicio UMA** autorizado. ¡Mantén la moto con el aceite correcto y prolongarás su vida útil!"
   },
   {
-    "question": "que tipo de encendido tiene la moto?",
-    "answer": "La Bajaj Boxer CT100 KS tiene un sistema de encendido que se activa mediante la llave de la motocicleta. Al girar la llave, se activa o desactiva el sistema eléctrico y se bloquea la dirección hacia la derecha o izquierda. El interruptor de encendido se encuentra en la posición ON cuando se gira la llave, lo que permite encender el motor. No hay información específica sobre el tipo de encendido (eléctrico, kick start, etc.) en el contexto proporcionado, pero se menciona que se debe accionar el pedal de arranque con el pie para encender el motor."
+    "question": "cual es la velocidad maxima de la moto",
+    "answer": "La velocidad máxima de la **Bajaj Boxer CT100 KS** no se indica en la documentación que hemos revisado. Si necesitas ese dato exacto, te recomiendo consultar el manual del propietario o preguntar directamente en un centro de servicio autorizado UMA. ¡Estoy a tu disposición para cualquier otra duda técnica que tengas!"
   },
   {
-    "question": "de hecho, se le dice KS porque su sistema de arranque es kick start",
-    "answer": "La designación \"KS\" en la Bajaj Boxer CT100 KS se refiere a que esta motocicleta cuenta con un sistema de arranque por pedal, es decir, \"Kick Start\" en inglés. Esto significa que, para encender el motor, es necesario accionar el pedal de arranque con el pie. Esta característica es específica de este modelo y es una de las formas en que se distingue de otros modelos que podrían tener arranque eléctrico. En el contexto proporcionado, se menciona que el arranque es por pedal, lo que confirma que \"KS\" se refiere a este tipo de arranque."
+    "question": "cuanto pesa la moto",
+    "answer": "**Peso de la Bajaj Boxer CT100 KS:** **109 kg**."
   },
   {
-    "question": "en donde se encuentra la bateria",
-    "answer": "La batería de la Bajaj Boxer CT100 KS se encuentra ubicada en el interior de la cubierta izquierda. También se menciona que el kit de herramientas está ubicado al lado de la batería. Recuerda que es importante cuidar la batería y no conducir la moto con la batería desconectada o averiada para evitar daños en los componentes eléctricos y electrónicos."
+    "question": "es en seco o con los liquidos ya puestos?",
+    "answer": "El valor **109 kg** que indica la tabla corresponde al **peso en seco** de la Bajaj Boxer CT100 KS, es decir, **sin incluir** los líquidos (aceite, combustible, refrigerante, etc.). Para obtener el peso en marcha deberás sumar el peso del combustible (≈ 10 L ≈ 7‑8 kg), aceite y demás fluidos."
   }
 ]
